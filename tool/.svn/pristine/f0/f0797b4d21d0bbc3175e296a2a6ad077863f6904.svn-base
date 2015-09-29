@@ -1,0 +1,105 @@
+.new_pod{
+  border: 3px solid #999;
+}
+option{
+  padding:1px;
+}
+form br{
+  clear: left;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {display: inline-block;}  /* for IE/Mac */
+
+/* Fixes jquery ui calendar bug */
+
+.ui-dialog-titlebar a{
+  cursor:pointer;
+}
+.ui-dialog-titlebar a.ui-state-hover{
+  border:0px none;
+}
+.ui-dialog-titlebar a.ui-state-hover{
+  background-position:left bottom;
+}
+
+
+/* Calendar Legend */
+#cal_legend{
+  float:left;
+  margin-top:9px;
+  padding-left:20px;
+}
+#cal_legend li{
+  border-left:1px solid #C2BEAA;
+  display:block;
+  float:left;
+  font-size:11px;
+  height:14px;
+  margin-bottom:8px;
+  margin-right:20px;
+  line-height:14px;
+}
+#cal_legend li span{
+  background:#FFFFFF none repeat scroll 0 0;
+  float:left;
+  margin-left:12px;
+  padding-left:6px;
+  width:300px;
+}
+#cal_legend li.cat_striped{
+  background-image: url(/images/new_ui/striped_small.png)st;
+}
+
+.pagination {
+	border-bottom:1px solid #E7E7E7;
+	margin:3px auto;
+	padding:3px 3px 5px;
+	text-align:right;
+	width:97%;
+}
+.pagination a {
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	background:#F5F5F5 none repeat scroll 0 0;
+	border:1px solid #AAAADD;
+	color:#2A63B1;
+	line-height:25px;
+	margin:2px 0;
+	padding:2px 5px;
+	text-decoration:none;
+	font-size: 12px;
+}
+.pagination a:hover, .pagination a:active {
+	border: 1px solid #2a5ea5;
+	color: #153f79;
+	background: transparent repeat-x scroll left top;
+}
+.pagination span.current {
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	background-color:#E4E4E4;
+	border:1px solid #D8D8D8;
+	color:#5D5D5D;
+	font-weight:bold;
+	margin:2px 0;
+	padding:2px 5px;
+	font-size: 12px;
+}
+.pagination span.disabled {
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	border:1px solid #EEEEEE;
+	color:#DDDDDD;
+	margin:2px;
+	padding:2px 5px;
+	font-size: 12px;
+}
+

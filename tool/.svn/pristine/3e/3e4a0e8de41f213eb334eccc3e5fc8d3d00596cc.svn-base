@@ -1,0 +1,774 @@
+-- MySQL dump 10.13  Distrib 5.5.9, for Win32 (x86)
+--
+-- Host: localhost    Database: aaddytools
+-- ------------------------------------------------------
+-- Server version	5.1.58-community
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `aaddytools`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `aaddytools` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `aaddytools`;
+
+--
+-- Table structure for table `city`
+--
+
+DROP TABLE IF EXISTS `city`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `city` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `stateId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `city`
+--
+
+LOCK TABLES `city` WRITE;
+/*!40000 ALTER TABLE `city` DISABLE KEYS */;
+INSERT INTO `city` VALUES (1,'Delhi',1,0);
+/*!40000 ALTER TABLE `city` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `client`
+--
+
+DROP TABLE IF EXISTS `client`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `client` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `client`
+--
+
+LOCK TABLES `client` WRITE;
+/*!40000 ALTER TABLE `client` DISABLE KEYS */;
+INSERT INTO `client` VALUES (1,'Test Client','test@weblemo.com','0123456789',1,0);
+/*!40000 ALTER TABLE `client` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `county`
+--
+
+DROP TABLE IF EXISTS `county`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `county` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `county`
+--
+
+LOCK TABLES `county` WRITE;
+/*!40000 ALTER TABLE `county` DISABLE KEYS */;
+INSERT INTO `county` VALUES (1,'India',0);
+/*!40000 ALTER TABLE `county` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failpage`
+--
+
+DROP TABLE IF EXISTS `failpage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `surveyId` varchar(100) NOT NULL,
+  `updatedTime` datetime NOT NULL,
+  `vendorId` varchar(100) NOT NULL,
+  `resultData` longtext NOT NULL,
+  `encKey` varchar(10) NOT NULL,
+  `vendorData` longtext NOT NULL,
+  `responseId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failpage`
+--
+
+LOCK TABLES `failpage` WRITE;
+/*!40000 ALTER TABLE `failpage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failpage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `landpage`
+--
+
+DROP TABLE IF EXISTS `landpage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `landpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `surveyId` varchar(100) NOT NULL,
+  `updatedTime` datetime NOT NULL,
+  `vendorId` varchar(100) NOT NULL,
+  `resultData` longtext NOT NULL,
+  `encKey` varchar(10) NOT NULL,
+  `respondentId` varchar(40) NOT NULL,
+  `vendorData` longtext NOT NULL,
+  `response` varchar(20) NOT NULL,
+  `Status` varchar(10) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `landpage`
+--
+
+LOCK TABLES `landpage` WRITE;
+/*!40000 ALTER TABLE `landpage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `landpage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `language`
+--
+
+DROP TABLE IF EXISTS `language`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `code` varchar(5) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `language`
+--
+
+LOCK TABLES `language` WRITE;
+/*!40000 ALTER TABLE `language` DISABLE KEYS */;
+INSERT INTO `language` VALUES (1,'0','0',0),(2,'English','0',0),(3,'English','en-US',0);
+/*!40000 ALTER TABLE `language` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login_attempts`
+--
+
+DROP TABLE IF EXISTS `login_attempts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login_attempts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `time` varchar(30) NOT NULL,
+  `version` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login_attempts`
+--
+
+LOCK TABLES `login_attempts` WRITE;
+/*!40000 ALTER TABLE `login_attempts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `login_attempts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `members`
+--
+
+DROP TABLE IF EXISTS `members`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `members` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` char(128) NOT NULL,
+  `salt` char(128) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `members`
+--
+
+LOCK TABLES `members` WRITE;
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nested_quota`
+--
+
+DROP TABLE IF EXISTS `nested_quota`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `nested_quota` (
+  `id` int(11) NOT NULL,
+  `parent_quota_id` int(11) NOT NULL,
+  `lower_limit` int(11) NOT NULL,
+  `upper_limit` int(11) NOT NULL,
+  `next_quota_id` int(11) NOT NULL,
+  `condition` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nested_quota`
+--
+
+LOCK TABLES `nested_quota` WRITE;
+/*!40000 ALTER TABLE `nested_quota` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nested_quota` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nested_quota_qualification`
+--
+
+DROP TABLE IF EXISTS `nested_quota_qualification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `nested_quota_qualification` (
+  `id` int(11) NOT NULL,
+  `quota_qualification_id` int(11) NOT NULL,
+  `nested_quota_id` int(11) NOT NULL,
+  `parent_quota_id` int(11) NOT NULL,
+  `survey_id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nested_quota_qualification`
+--
+
+LOCK TABLES `nested_quota_qualification` WRITE;
+/*!40000 ALTER TABLE `nested_quota_qualification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nested_quota_qualification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `productName` varchar(100) NOT NULL,
+  `etc1` varchar(100) NOT NULL,
+  `etc2` varchar(100) NOT NULL,
+  `etc3` varchar(100) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'Test Product','extra','extra','extra',0);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `project`
+--
+
+DROP TABLE IF EXISTS `project`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `project` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `projectName` varchar(100) NOT NULL,
+  `projectManagerName` varchar(100) NOT NULL,
+  `managerMobile` int(11) NOT NULL,
+  `managerEmail` varchar(100) NOT NULL,
+  `masterId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `project`
+--
+
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+INSERT INTO `project` VALUES (1,'Test Client','Test Manager',123456789,'test@weblemo.com',1,0);
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualification`
+--
+
+DROP TABLE IF EXISTS `qualification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qualification` (
+  `id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `visibilty` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `languageId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualification`
+--
+
+LOCK TABLES `qualification` WRITE;
+/*!40000 ALTER TABLE `qualification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualification_content_type`
+--
+
+DROP TABLE IF EXISTS `qualification_content_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qualification_content_type` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `no_of_options` varchar(45) NOT NULL,
+  `html_tag` varchar(45) NOT NULL,
+  `type` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualification_content_type`
+--
+
+LOCK TABLES `qualification_content_type` WRITE;
+/*!40000 ALTER TABLE `qualification_content_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualification_content_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualification_language`
+--
+
+DROP TABLE IF EXISTS `qualification_language`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qualification_language` (
+  `id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `qualification_id` int(11) NOT NULL,
+  `qualification_name` varchar(200) NOT NULL,
+  `qualification_description` varchar(400) NOT NULL,
+  `qualification_question` varchar(100) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualification_language`
+--
+
+LOCK TABLES `qualification_language` WRITE;
+/*!40000 ALTER TABLE `qualification_language` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualification_language` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualification_options_value`
+--
+
+DROP TABLE IF EXISTS `qualification_options_value`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qualification_options_value` (
+  `id` int(11) NOT NULL,
+  `qualification_content_type_id` int(11) NOT NULL,
+  `option_display_value` varchar(100) NOT NULL,
+  `stored_value` varchar(100) NOT NULL,
+  `result` int(11) NOT NULL,
+  `css_class` varchar(100) NOT NULL,
+  `javascript_funtion` varchar(100) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualification_options_value`
+--
+
+LOCK TABLES `qualification_options_value` WRITE;
+/*!40000 ALTER TABLE `qualification_options_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualification_options_value` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualification_type`
+--
+
+DROP TABLE IF EXISTS `qualification_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qualification_type` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `html_type` varchar(100) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualification_type`
+--
+
+LOCK TABLES `qualification_type` WRITE;
+/*!40000 ALTER TABLE `qualification_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualification_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `quota`
+--
+
+DROP TABLE IF EXISTS `quota`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `quota` (
+  `id` int(11) NOT NULL,
+  `upper_limit` int(11) NOT NULL,
+  `lower_limit` int(11) NOT NULL DEFAULT '0',
+  `parent_quota_id` int(11) NOT NULL DEFAULT '0',
+  `quota_name` int(11) NOT NULL,
+  `no_of_subquota` int(11) NOT NULL DEFAULT '0',
+  `quota_type` int(11) NOT NULL,
+  `adjustment_type` varchar(45) NOT NULL,
+  `status` int(11) NOT NULL,
+  `size` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `quota`
+--
+
+LOCK TABLES `quota` WRITE;
+/*!40000 ALTER TABLE `quota` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quota` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `quota_qualification`
+--
+
+DROP TABLE IF EXISTS `quota_qualification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `quota_qualification` (
+  `id` int(11) NOT NULL,
+  `quota_id` int(11) NOT NULL,
+  `completes` int(11) NOT NULL,
+  `survey_qualification_id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `quota_qualification`
+--
+
+LOCK TABLES `quota_qualification` WRITE;
+/*!40000 ALTER TABLE `quota_qualification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quota_qualification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shorturl`
+--
+
+DROP TABLE IF EXISTS `shorturl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shorturl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `baseURL` varchar(350) NOT NULL,
+  `createdTime` datetime NOT NULL,
+  `updatedTime` datetime NOT NULL,
+  `encKey` varchar(20) NOT NULL,
+  `hitCount` int(11) NOT NULL,
+  `createdBy` varchar(50) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shorturl`
+--
+
+LOCK TABLES `shorturl` WRITE;
+/*!40000 ALTER TABLE `shorturl` DISABLE KEYS */;
+/*!40000 ALTER TABLE `shorturl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `state`
+--
+
+DROP TABLE IF EXISTS `state`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `state` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `countryId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `state`
+--
+
+LOCK TABLES `state` WRITE;
+/*!40000 ALTER TABLE `state` DISABLE KEYS */;
+INSERT INTO `state` VALUES (1,'Delhi',1,0);
+/*!40000 ALTER TABLE `state` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `successpage`
+--
+
+DROP TABLE IF EXISTS `successpage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `successpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `surveyId` varchar(100) NOT NULL,
+  `updatedTime` datetime NOT NULL,
+  `vendorId` varchar(100) NOT NULL,
+  `resultData` longtext NOT NULL,
+  `encKey` varchar(10) NOT NULL,
+  `vendorData` longtext NOT NULL,
+  `responseId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `successpage`
+--
+
+LOCK TABLES `successpage` WRITE;
+/*!40000 ALTER TABLE `successpage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `successpage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `survey`
+--
+
+DROP TABLE IF EXISTS `survey`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `survey` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `surveyDisplayId` varchar(100) NOT NULL,
+  `surveyName` varchar(100) NOT NULL,
+  `projectId` int(11) NOT NULL,
+  `startDate` datetime NOT NULL,
+  `endDate` datetime NOT NULL,
+  `clientId` int(11) NOT NULL,
+  `sales` int(11) NOT NULL,
+  `cpi` int(11) NOT NULL,
+  `margin` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `revenue` int(11) NOT NULL,
+  `grossProfit` int(11) NOT NULL,
+  `loi` int(11) NOT NULL,
+  `completesNeeded` int(11) NOT NULL,
+  `ir` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `countryId` int(11) NOT NULL,
+  `languageId` int(11) NOT NULL,
+  `notes` text NOT NULL,
+  `validationId` int(11) NOT NULL,
+  `testLinkId` int(11) NOT NULL,
+  `liveLinkId` int(11) NOT NULL,
+  `reportingLink` varchar(400) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `survey`
+--
+
+LOCK TABLES `survey` WRITE;
+/*!40000 ALTER TABLE `survey` DISABLE KEYS */;
+/*!40000 ALTER TABLE `survey` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `survey_qualification`
+--
+
+DROP TABLE IF EXISTS `survey_qualification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `survey_qualification` (
+  `id` int(11) NOT NULL,
+  `surveyId` int(11) NOT NULL,
+  `qualificationId` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `survey_qualification`
+--
+
+LOCK TABLES `survey_qualification` WRITE;
+/*!40000 ALTER TABLE `survey_qualification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `survey_qualification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `validation`
+--
+
+DROP TABLE IF EXISTS `validation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `validation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `relevantId` int(11) NOT NULL,
+  `Ip` int(11) NOT NULL,
+  `geoLocation` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `validation`
+--
+
+LOCK TABLES `validation` WRITE;
+/*!40000 ALTER TABLE `validation` DISABLE KEYS */;
+INSERT INTO `validation` VALUES (1,0,0,0,0),(2,1,0,0,0),(3,1,1,0,0),(4,1,1,1,0),(5,0,1,0,0),(6,0,1,1,0),(7,0,0,1,0),(8,1,0,0,0);
+/*!40000 ALTER TABLE `validation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `version_update`
+--
+
+DROP TABLE IF EXISTS `version_update`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `version_update` (
+  `id` int(11) NOT NULL,
+  `master_id` int(11) NOT NULL,
+  `master_table` varchar(200) NOT NULL,
+  `master_column_name` varchar(200) NOT NULL,
+  `master_version` int(11) NOT NULL,
+  `master_previous_value` varchar(200) NOT NULL,
+  `master_new_value` varchar(200) NOT NULL,
+  `data` text NOT NULL,
+  `update_date` datetime NOT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `version_update`
+--
+
+LOCK TABLES `version_update` WRITE;
+/*!40000 ALTER TABLE `version_update` DISABLE KEYS */;
+/*!40000 ALTER TABLE `version_update` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-02-15  0:35:59
